@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E175b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="NO" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <development version="7000" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="8644">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="8645" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8642"/>
+                        <viewControllerLayoutGuide type="bottom" id="8643"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8646">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9227">
+                                <rect key="frame" x="15" y="20" width="345" height="208"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ukx-7A-BmO">
+                                <rect key="frame" x="48" y="237" width="279" height="252"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="17636" translatesAutoresizingMaskIntoConstraints="NO">
+                                        <rect key="frame" x="-12" y="-42" width="380" height="380"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <variation key="heightClass=regular-widthClass=compact" image="search.png" fixedFrame="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9228" customClass="FBSDKLoginButton">
+                                        <rect key="frame" x="116" y="178" width="60" height="30"/>
+                                        <state key="normal" title="FB Login">
+                                            <color key="titleShadowColor" red="0.57230675220489502" green="0.57230675220489502" blue="0.57230675220489502" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2A-5h-RQX" numberOfLines="2" usesAttributedText="YES">
+                                        <rect key="frame" x="94" y="12" width="176" height="41"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Searching....">
+                                                <attributes>
+                                                    <color key="NSColor" colorSpace="calibratedRGB" red="1" green="0.13725490196078433" blue="0.32156862745098042" alpha="1"/>
+                                                    <font key="NSFont" name="Copperplate" family="Copperplate" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </label>
+                                    <view contentMode="scaleToFill" id="12425" translatesAutoresizingMaskIntoConstraints="NO" customClass="FBSDKProfilePictureView">
+                                        <rect key="frame" x="67" y="37" width="157" height="157"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="17628"/>
+                                            </mask>
+                                        </variation>
+                                        <constraints>
+                                            <constraint id="17628" firstAttribute="width" secondItem="12425" secondAttribute="height" multiplier="1:1"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="17628"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="17606"/>
+                                        <include reference="17607"/>
+                                        <include reference="17621"/>
+                                        <include reference="17622"/>
+                                        <include reference="17627"/>
+                                        <include reference="17629"/>
+                                        <include reference="17639"/>
+                                    </mask>
+                                    <mask key="subviews">
+                                        <include reference="17636"/>
+                                    </mask>
+                                </variation>
+                                <constraints>
+                                    <constraint id="17606" firstItem="9228" firstAttribute="centerX" secondItem="ukx-7A-BmO" secondAttribute="centerX" constant="6"/>
+                                    <constraint id="17607" firstItem="ukx-7A-BmO" firstAttribute="bottom" secondItem="9228" secondAttribute="bottom" constant="19">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                    </constraint>
+                                    <constraint id="17621" firstItem="u2A-5h-RQX" firstAttribute="centerX" secondItem="9228" secondAttribute="centerX"/>
+                                    <constraint id="17622" firstItem="u2A-5h-RQX" firstAttribute="top" secondItem="ukx-7A-BmO" secondAttribute="top" constant="12"/>
+                                    <constraint id="17627" firstItem="12425" firstAttribute="top" secondItem="u2A-5h-RQX" secondAttribute="bottom" constant="7"/>
+                                    <constraint id="17629" firstItem="12425" firstAttribute="centerX" secondItem="9228" secondAttribute="centerX"/>
+                                    <constraint id="17639" firstItem="9228" firstAttribute="top" secondItem="12425" secondAttribute="bottom" constant="8"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="17606"/>
+                                        <exclude reference="17607"/>
+                                        <exclude reference="17621"/>
+                                        <exclude reference="17622"/>
+                                        <exclude reference="17627"/>
+                                        <exclude reference="17629"/>
+                                        <exclude reference="17639"/>
+                                    </mask>
+                                    <mask key="subviews">
+                                        <exclude reference="17636"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="17569" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="44" y="497" width="279" height="150"/>
+                                <constraints>
+                                    <constraint id="17579" firstItem="17569" firstAttribute="height" constant="108">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="150"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="17579"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" image="petpartner.png">
+                                    <mask key="constraints">
+                                        <include reference="17579"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99607843137254903" green="0.87058823529411766" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9227" secondAttribute="trailing" constant="15" id="2go-YX-6eA"/>
+                            <constraint firstItem="9227" firstAttribute="leading" secondItem="8646" secondAttribute="leading" constant="15" id="Gkt-bO-rVY"/>
+                            <constraint firstItem="8643" firstAttribute="top" secondItem="9227" secondAttribute="bottom" constant="397" id="T7q-uj-L6x">
+                                <variation key="heightClass=regular-widthClass=compact" constant="445"/>
+                            </constraint>
+                            <constraint firstItem="9227" firstAttribute="top" secondItem="8646" secondAttribute="top" constant="20" id="YVI-Pl-jtj"/>
+                            <constraint id="17481" firstItem="8646" firstAttribute="trailing" secondItem="ukx-7A-BmO" secondAttribute="trailing" constant="48"/>
+                            <constraint id="17490" firstItem="ukx-7A-BmO" firstAttribute="leading" secondItem="8646" secondAttribute="leading" constant="48"/>
+                            <constraint id="17491" firstItem="ukx-7A-BmO" firstAttribute="top" secondItem="9227" secondAttribute="bottom" constant="24">
+                                <variation key="heightClass=regular-widthClass=compact" constant="15"/>
+                            </constraint>
+                            <constraint id="17578" firstItem="9227" firstAttribute="centerX" secondItem="17569" secondAttribute="centerX" constant="4"/>
+                            <constraint id="17604" firstItem="8643" firstAttribute="top" secondItem="17569" secondAttribute="bottom" constant="24">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint id="17608" firstItem="17569" firstAttribute="top" secondItem="ukx-7A-BmO" secondAttribute="bottom" constant="8"/>
+                            <constraint id="17644" firstItem="17569" firstAttribute="width" secondItem="ukx-7A-BmO" secondAttribute="width"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="17569"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="17578"/>
+                                <exclude reference="17604"/>
+                                <exclude reference="17608"/>
+                                <exclude reference="17644"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="17569"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="17578"/>
+                                <include reference="17604"/>
+                                <include reference="17608"/>
+                                <include reference="17644"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="LoginBtn" destination="9228" id="name-outlet-9228"/>
+                        <outlet property="LoginGifWebView" destination="9227" id="name-outlet-9227"/>
+                        <outlet property="ProfileName" destination="u2A-5h-RQX" id="name-outlet-u2A-5h-RQX"/>
+                        <outlet property="SearchBackgroundView" destination="ukx-7A-BmO" id="name-outlet-ukx-7A-BmO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8647" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="661.6" y="-12.14393"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedScreenMetrics key="destination" type="retina47"/>
+    </simulatedMetricsContainer>
+    <resources>
+        <image name="petpartner.png" width="469" height="233"/>
+        <image name="growth.png" width="128" height="128"/>
+        <image name="search.png" width="256" height="256"/>
+    </resources>
+</document>
