@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -44,7 +44,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ukx-7A-BmO">
                                 <rect key="frame" x="48" y="237" width="279" height="252"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="17636" translatesAutoresizingMaskIntoConstraints="NO">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="17636" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                         <rect key="frame" x="-12" y="-42" width="380" height="380"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <variation key="heightClass=regular-widthClass=compact" image="search.png" fixedFrame="YES"/>
@@ -199,7 +199,138 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8647" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="661.6" y="-12.14393"/>
+            <point key="canvasLocation" x="777.6" y="-32.14393"/>
+        </scene>
+        <scene sceneID="18157">
+            <objects>
+                <navigationController title="Master" id="18158" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="18161">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="18160" kind="relationship" relationship="rootViewController" id="18159"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="18162" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1480" y="-146"/>
+        </scene>
+        <scene sceneID="18163">
+            <objects>
+                <viewController title="Detail" id="18164" customClass="DetailViewController" customModuleProvider="" sceneMemberID="viewController" storyboardIdentifier="DetailViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="18176"/>
+                        <viewControllerLayoutGuide type="bottom" id="18179"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="18170">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="18166" numberOfLines="2" misplaced="YES">
+                                <rect key="frame" x="20" y="434" width="560" height="17"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="18168" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="88" y="106" width="199" height="138"/>
+                                <constraints>
+                                    <constraint id="18171" firstAttribute="width" secondItem="18168" secondAttribute="height" multiplier="212:147"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="18166" firstAttribute="leading" secondItem="18170" secondAttribute="leading" constant="20" symbolic="YES" id="18172"/>
+                            <constraint firstAttribute="trailing" secondItem="18166" secondAttribute="trailing" constant="20" symbolic="YES" id="18173"/>
+                            <constraint id="18174" firstItem="18168" firstAttribute="leading" secondItem="18170" secondAttribute="leading" constant="88"/>
+                            <constraint id="18175" firstItem="18168" firstAttribute="top" secondItem="18176" secondAttribute="bottom" constant="42"/>
+                            <constraint id="18177" firstItem="18170" firstAttribute="trailing" secondItem="18168" secondAttribute="trailing" constant="88"/>
+                            <constraint id="18178" firstItem="18166" firstAttribute="top" secondItem="18168" secondAttribute="bottom" constant="34"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Detail" id="18169"/>
+                    <connections>
+                        <outlet property="detailDescriptionLabel" destination="18166" id="18165"/>
+                        <outlet property="detailImageView" destination="18168" id="name-outlet-18168"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="18180" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-745.4" y="800"/>
+        </scene>
+        <scene sceneID="18181">
+            <objects>
+                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="18160" customClass="MasterViewController" customModuleProvider="" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="18183">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="18187" style="IBUITableViewCellStyleDefault" id="18186">
+                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                                <frame key="frameInset" minY="86" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="18186" id="18190">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="18187">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="18189" kind="showDetail" identifier="showDetail" id="18188"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="18160" id="18184"/>
+                            <outlet property="delegate" destination="18160" id="18185"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Master" id="18182"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="18191" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-774" y="-140"/>
+        </scene>
+        <scene sceneID="18192">
+            <objects>
+                <navigationController id="18189" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="18194">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="18164" kind="relationship" relationship="rootViewController" id="18193"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="18195" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1431.4" y="806"/>
+        </scene>
+        <scene sceneID="18196">
+            <objects>
+                <splitViewController id="18197" sceneMemberID="viewController" storyboardIdentifier="SplitViewController">
+                    <toolbarItems/>
+                    <connections>
+                        <segue destination="18158" kind="relationship" relationship="masterViewController" id="18198"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="18199" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1955" y="627"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

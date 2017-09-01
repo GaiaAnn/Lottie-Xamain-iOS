@@ -60,6 +60,8 @@ namespace Lottie_Test
 
 			// Handle actions once the user is logged in
 			LoginBtn.Completed += (sender, e) => {
+				var SplitVC = this.Storyboard.InstantiateViewController("SplitViewController");
+                var listView = SplitVC.View;
 				if (e.Error != null)
 				{
 					// Handle if there was an error
@@ -69,12 +71,15 @@ namespace Lottie_Test
 				{
 					// Handle if the user cancelled the login request
 				}
-                tokenStatus = AccessToken.CurrentAccessToken;
+
+				// Handle your successful login
+				tokenStatus = AccessToken.CurrentAccessToken;
                 if (tokenStatus != null)
                 {
                     LoginBtn.SetAttributedTitle(new NSAttributedString("登出"), UIControlState.Normal);
+                    SplitVC.ModalTransitionStyle = UIModalTransitionStyle.FlipHorizontal;
+					this.PresentViewController(SplitVC, true, null);
                 }
-				// Handle your successful login
 			};
 
 			// Handle actions once the user is logged out
