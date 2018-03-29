@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using Lottie_Test.Services;
 using Lottie_Test.Common;
 using CoreAnimation;
+using System.Linq;
 
 namespace Lottie_Test
 {
@@ -24,9 +25,20 @@ namespace Lottie_Test
 		public async override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+            //Initial View
+            var DetailVC = this.Storyboard.InstantiateViewController("DetailViewController");
+            var detailView = DetailVC.View;
+			UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes()
+			{
+                TextColor = UIColor.Brown,
+                TextShadowColor = UIColor.Black
+			});
+            //Nav Button Color
+            this.NavigationController.NavigationBar.TintColor = new UIColor(138f / 255f, 63f / 255f, 67f / 255f, 1);
+			//Nav Background Color
+            this.NavigationController.NavigationBar.BarTintColor = new UIColor(252f / 255f, 241f / 255f, 189f / 255f, 1);
 
-			Title = NSBundle.MainBundle.LocalizedString("Master", "Master");
-
+			Title = NSBundle.MainBundle.LocalizedString("Partner List", "Partner List");
 			// Perform any additional setup after loading the view, typically from a nib.
 			NavigationItem.LeftBarButtonItem = EditButtonItem;
 			var addButton = new UIBarButtonItem(UIBarButtonSystemItem.Add, AddNewItem);
@@ -43,7 +55,7 @@ namespace Lottie_Test
 		public override void ViewWillAppear(bool animated)
 		{
 			ClearsSelectionOnViewWillAppear = SplitViewController.Collapsed;
-			Variable.ViewWillAppear = true;
+			Variables.ViewWillAppear = true;
 			base.ViewWillAppear(animated);
 		}
 
@@ -112,12 +124,19 @@ namespace Lottie_Test
 			{
 				this.controller.PerformSegue("showDetail", null);
 			}
+
 			// Customize the appearance of table view cells.
 			public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
 			{
-				tableView.RowHeight = 90;
+                var row = indexPath.Row;
+                //Set Row Heigh
+				tableView.RowHeight = 130;
 				tableView.SeparatorColor = UIColor.FromRGB(235, 235, 241);//.Clear; //235 235 241
 				var cell = tableView.DequeueReusableCell(CellIdentifier, indexPath) as CardCell;
+                animals[row].Name = animals[row].Name == "" ?"請幫我取個名字":animals[row].Name;
+                //置換代表圖片
+                cell.SetTypeImage(animals[row].Type);
+                //loading 自己的圖片
 				cell.UpdateCell(animals, indexPath.Row);
 				return cell;
 			}
@@ -146,7 +165,7 @@ namespace Lottie_Test
 			public override void WillDisplay(UITableView tableView, UITableViewCell cell, NSIndexPath indexPath)
 			{
 				#region Set animation when Display Data
-				if (!Variable.ViewWillAppear)
+				if (!Variables.ViewWillAppear)
 				{
 					//1. Set the initial state of the cell
 					cell.Alpha = 0;
@@ -165,7 +184,7 @@ namespace Lottie_Test
 				if (indexPath.Row == tableView.IndexPathsForVisibleRows[tableView.IndexPathsForVisibleRows.Length - 1].LongRow)
 				{
 					var lastrow = tableView.IndexPathsForVisibleRows[tableView.IndexPathsForVisibleRows.Length - 1].LongRow;
-					Variable.ViewWillAppear = false;
+					Variables.ViewWillAppear = false;
 				}
 				#endregion
 

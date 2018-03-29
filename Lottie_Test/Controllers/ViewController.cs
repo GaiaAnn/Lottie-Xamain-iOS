@@ -27,7 +27,7 @@ namespace Lottie_Test
 				//Dialog.ShowAlert("LottieTest", "HBD", "OK");
 				var launchVC = new LaunchAnimationController();
 				var launchView = launchVC.View;
-				var loginVC = Storyboard.InstantiateViewController("LoginViewController")as LoginViewController;
+				var loginVC = Storyboard.InstantiateViewController("LoginViewController") as LoginViewController;
 				var loginView = loginVC.View;
 				this.PresentViewController(loginVC, false, null);
 			});

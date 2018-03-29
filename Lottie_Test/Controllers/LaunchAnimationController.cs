@@ -9,6 +9,7 @@ using Facebook.CoreKit;
 using System.Collections.Generic;
 using System.Drawing;
 using CoreGraphics;
+using Lottie_Test.Component;
 
 namespace Lottie_Test
 {
@@ -33,6 +34,8 @@ namespace Lottie_Test
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
+			
+
 			// Perform any additional setup after loading the view, typically from a nib.
 			// If was send true to Profile.EnableUpdatesOnAccessTokenChange method
 			// this notification will be called after the user is logged in and

@@ -14,5 +14,8 @@ namespace Lottie_Test
     [Register ("MasterViewController")]
     partial class MasterViewController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

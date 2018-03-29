@@ -27,6 +27,7 @@ namespace Lottie_Test
 			//this.Window.RootViewController = launchVC;
 
 			Profile.EnableUpdatesOnAccessTokenChange(true);
+			//change into ur facebook app ID
 			Settings.AppID = "296077300870108";
 			Settings.DisplayName = "Login";
 			//...

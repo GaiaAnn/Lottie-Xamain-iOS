@@ -16,22 +16,49 @@ namespace Lottie_Test
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel detailDescriptionLabel { get; set; }
+        UIKit.UIImageView detailImageView { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIImageView detailImageView { get; set; }
+        UIKit.UILabel lbLocation { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lbName { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lbNote { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView sexImg { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (detailDescriptionLabel != null) {
-                detailDescriptionLabel.Dispose ();
-                detailDescriptionLabel = null;
-            }
-
             if (detailImageView != null) {
                 detailImageView.Dispose ();
                 detailImageView = null;
+            }
+
+            if (lbLocation != null) {
+                lbLocation.Dispose ();
+                lbLocation = null;
+            }
+
+            if (lbName != null) {
+                lbName.Dispose ();
+                lbName = null;
+            }
+
+            if (lbNote != null) {
+                lbNote.Dispose ();
+                lbNote = null;
+            }
+
+            if (sexImg != null) {
+                sexImg.Dispose ();
+                sexImg = null;
             }
         }
     }

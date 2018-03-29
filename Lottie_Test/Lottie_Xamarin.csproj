@@ -87,9 +87,6 @@
     <Reference Include="Facebook">
       <HintPath>..\packages\Xamarin.Facebook.iOS.4.24.0\lib\Xamarin.iOS10\Facebook.dll</HintPath>
     </Reference>
-    <Reference Include="TableCell">
-      <HintPath>..\..\GSS_Beacon_Merge\TableCell\bin\Debug\TableCell.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="ModernHttpClient">
       <HintPath>..\packages\modernhttpclient.2.4.2\lib\Xamarin.iOS10\ModernHttpClient.dll</HintPath>
@@ -110,6 +107,10 @@
     <Folder Include="Common\" />
     <Folder Include="Controllers\" />
     <Folder Include="Services\" />
+    <Folder Include="Services\Api\" />
+    <Folder Include="Services\SQL\" />
+    <Folder Include="Component\" />
+    <Folder Include="image\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -125,7 +126,7 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="ToolKit\Dialog.cs" />
     <Compile Include="Common\Common.cs" />
-    <Compile Include="Common\Variable.cs" />
+    <Compile Include="Common\Variables.cs" />
     <Compile Include="Controllers\LaunchAnimationController.cs" />
     <Compile Include="Controllers\LaunchAnimationController.designer.cs">
       <DependentUpon>LaunchAnimationController.cs</DependentUpon>
@@ -138,7 +139,6 @@
     <Compile Include="Controllers\ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Services\ApiService.cs" />
     <Compile Include="Controllers\MasterViewController.cs" />
     <Compile Include="Controllers\MasterViewController.designer.cs">
       <DependentUpon>MasterViewController.cs</DependentUpon>
@@ -146,6 +146,15 @@
     <Compile Include="Controllers\DetailViewController.cs" />
     <Compile Include="Controllers\DetailViewController.designer.cs">
       <DependentUpon>DetailViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Api\ApiService.cs" />
+    <Compile Include="Services\SQL\SQLite.cs" />
+    <Compile Include="Services\SQL\SQLiteAsync.cs" />
+    <Compile Include="Services\SQL\DataAccess.cs" />
+    <Compile Include="Component\LoadingOverlay.cs" />
+    <Compile Include="TestViewController.cs" />
+    <Compile Include="TestViewController.designer.cs">
+      <DependentUpon>TestViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +167,17 @@
     <BundleResource Include="Resources\petpartner.png" />
     <BundleResource Include="Resources\growth.png" />
     <BundleResource Include="Resources\search.png" />
+    <BundleResource Include="Resources\data.json" />
+    <BundleResource Include="image\black-cat.png" />
+    <BundleResource Include="image\background.png" />
+    <BundleResource Include="image\home.png" />
+    <BundleResource Include="image\notes.png" />
+    <BundleResource Include="image\location.png" />
+    <BundleResource Include="Resources\boy.png" />
+    <BundleResource Include="Resources\cat.png" />
+    <BundleResource Include="Resources\dog.png" />
+    <BundleResource Include="Resources\girl.png" />
+    <BundleResource Include="image\girl.png" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="facebookios">
@@ -168,6 +188,12 @@
       <Version>7.0.1</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\GSS_Beacon_Merge 3\TableCell\TableCell.csproj">
+      <Project>{04C6EBAB-CBDB-4976-B268-2599BFA92F69}</Project>
+      <Name>TableCell</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
